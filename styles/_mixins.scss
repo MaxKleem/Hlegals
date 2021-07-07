@@ -1,0 +1,15 @@
+@mixin  media-breakpoint-up($breakpoint-name) {
+  $breakpoint-value: map-get($grid-breakpoints,$breakpoint-name);
+  @media screen and (min-width:$breakpoint-value) {
+    @content;
+  }
+}
+
+.title {
+  font-size: 12px;
+  line-height: 22px;
+  @include media-breakpoint-up(xxl){
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
